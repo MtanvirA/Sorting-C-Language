@@ -26,25 +26,18 @@ void printArray(int n, int arr[])
     printf("\n");
 }
 
-void setArray(int n, int arr[])
-{
-    for (int i = 0; i < n; i++)
-    {
-        scanf("%d", &arr[i]);
-    }
-}
-
 int main()
 {
 
     int n;
     printf("Enter the length of the array: ");
     scanf("%d", &n);
-
     int arr[n];
-
     printf("Enter the elements of the array: ");
-    setArray(n, arr);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
 
     printf("The unsorted array: ");
     printArray(n, arr);
