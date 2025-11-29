@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+void swap(int n, int arr[], int a, int b)
+{
+    int temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}
+
+void insertionSort(int n, int arr[])
+{
+    for(int i=1; i<=n-1; i++)
+    {
+        int j=i;
+        while(j>=1 && arr[j]<arr[j-1])
+        {
+            swap(n, arr, j, j-1);
+            j--;
+        }
+    }
+}
+
+void printArray(int n, int arr[])
+{
+    printf("\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+void setArray(int n, int arr[])
+{
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+}
+
+int main()
+{
+
+    int n;
+    printf("Enter the length of the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    printf("Enter the elements of the array: ");
+    setArray(n, arr);
+
+    printf("The unsorted array: ");
+    printArray(n, arr);
+
+    insertionSort(n, arr);
+
+    printf("The sorted array: ");
+    printArray(n, arr);
+
+    return 0;
+}
